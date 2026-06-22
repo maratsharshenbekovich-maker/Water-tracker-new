@@ -68,7 +68,9 @@ button{
 
 <script>
 
-let water = 0;
+let water = localStorage.getItem("water")
+  ? Number(localStorage.getItem("water"))
+  : 0;
 
 function addWater(){
     water += 250;
@@ -76,12 +78,13 @@ function addWater(){
     if(water > 2000){
         water = 2000;
     }
-
+localStorage.setItem("water", water);
     document.getElementById("progress").innerText = water + " / 2000 мл";
 }
 
 function resetWater(){
     water = 0;
+    localStorage.setItem("water", water);
     document.getElementById("progress").innerText = "0 / 2000 мл";
 }
 
