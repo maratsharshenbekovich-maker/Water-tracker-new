@@ -71,7 +71,7 @@ button{
 let water = localStorage.getItem("water")
   ? Number(localStorage.getItem("water"))
   : 0;
-
+document.getElementById("progress").innerText = water + " / 2000 мл";
 function addWater(){
     water += 250;
 
