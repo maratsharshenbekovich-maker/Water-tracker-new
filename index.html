@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Трекер воды</title>
+
+<style>
+body{
+font-family:Arial,sans-serif;
+background:#eaf6ff;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+margin:0;
+}
+.card{
+background:white;
+padding:30px;
+border-radius:20px;
+box-shadow:0 10px 20px rgba(0,0,0,.15);
+text-align:center;
+width:320px;
+}
+h1{
+margin-top:0;
+}
+#progress{
+font-size:30px;
+font-weight:bold;
+margin:20px 0;
+}
+button{
+padding:12px 20px;
+margin:8px;
+border:none;
+border-radius:10px;
+cursor:pointer;
+font-size:18px;
+}
+.add{
+background:#2d89ef;
+color:white;
+}
+.reset{
+background:#ff5b5b;
+color:white;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+<h1>💧 Трекер воды</h1>
+
+<div id="progress">0 / 2000 мл</div>
+
+<button class="add" onclick="addWater()">+250 мл</button>
+
+<button class="reset" onclick="resetWater()">Сброс</button>
+
+</div>
+
+<script>
+let water=0;
+
+function addWater(){
+water+=250;
+if(water>2000) water=2000;
+document.getElementById("progress").innerText=water+" / 2000 мл";
+}
+
+function resetWater(){
+water=0;
+document.getElementById("progress").innerText="0 / 2000 мл";
+}
+</script>
+
+</body>
+</html>
